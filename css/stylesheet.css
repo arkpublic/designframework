@@ -1,0 +1,168 @@
+body{
+    background-color: rgb(180, 180, 180);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+.border-black{
+    border: 1px solid black;
+}
+
+.bg-gray{
+    background-color: gray;;
+}
+
+.bg-red{
+    background-color: rgb(250, 198, 102);
+}
+
+ul > li > a{
+    color: rgb(0, 0, 0) !important;
+    text-decoration: none;
+}
+
+    li > ul > li{
+        padding-left: 10px;
+    }
+
+.description-box{
+    border-radius: 5px;
+    border: 1px solid rgb(146, 79, 2);
+    padding: 10px;
+    background-color: rgb(255, 234, 209);
+}
+
+    .description-box-example-box{
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-style: italic;
+        color:gray;
+    }
+    
+    .description-box-class-name{
+        padding-left: 10px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    
+.code-box{
+    font-family: monospace;
+    border-radius: 5px;
+    border: 1px solid rgb(146, 79, 2);
+    padding: 10px;
+    background-color: rgb(255, 234, 209);
+}
+
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+ 
+.nav-toggle-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.nav-toggle-container { 
+    position:fixed;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    height: 100%;
+    top: 50px;
+    padding-top: 50px;
+    z-index: 8;
+} 
+.sfp-modal-container {
+    position: fixed;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000006e;
+    top: 0;
+    left: 0;
+    overflow: auto;  
+  }
+  .sfp-black-space-modal {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer;
+  }
+  .sfp-modal-inner {
+    position: absolute;
+    height: 250px;
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    display: block;
+    top: calc(50% - 125px);
+    left: calc(50% - 350px);
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+  }
+
+.btn-showing-modal {
+    height: 2.5rem;
+    width: 8rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.close-button {
+    position: absolute;
+    right: 1rem;
+    top: 0.25rem;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+    font-family: sans-serif;
+    transform: rotate(45deg);
+    color: #666;
+}
+.close-button:hover {
+    color: red;
+}
+.sfp-modal-inner h2 {
+    text-align: center;
+    padding: 0.5rem 0rem;
+    color: #353535;
+}
+
+.hr-modal {
+    margin: 0;
+    color: #d5d5d5;
+}
+
+.absolute-pos {
+    position: absolute;
+}
+
+.fixed-pos {
+    position: fixed;
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
+
+.df-banner {
+    position: absolute;
+    top: 50px;
+    z-index: 8;
+}
+
+.menu-position {
+    top: 50;
+}
+
+.top-pad-100 {
+    padding-top: 100px;
+}
+
+.pad-x-10 {
+    padding: 5px 0px!important;
+}

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/check-in-design.css">
+</head>
+<body>     
+    <div class="chn-container-fluid top-pad-100" id="website-app">
+        <nav class="navbar nav-bar-extra-large">
+            <div class="brand-title nav-toggle-button">DesignFramework</div>
+            <div class="div-toggle-button">
+                <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>            
+            </a>
+            </div>
+            
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li> 
+                    <li><a href="#">Register</a></li>                
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar nav-bar-large">
+            <div class="brand-title nav-toggle-button">DesignFramework</div>
+            <div class="div-toggle-button">
+                <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>            
+            </a>
+            </div>
+            
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li> 
+                    <li><a href="#">Register</a></li>                
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar nav-bar-mid">
+            <div class="brand-title">DesignFramework</div>
+            <div class="div-toggle-button">
+                <a href="#" class="toggle-button nav-toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>            
+            </a>
+            </div>
+            
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li> 
+                    <li><a href="#">Register</a></li>                
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar nav-bar-low">
+            <div class="brand-title">DesignFramework</div>
+            <div class="div-toggle-button">
+                <a href="#" class="toggle-button nav-toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>            
+            </a>
+            </div>
+            
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li> 
+                    <li><a href="#">Register</a></li>                
+                </ul>
+            </div>
+        </nav>
+        <div class="chn-row-fluid pad-x-10-fluid df-banner">
+            <div class='chn-banner'>
+                <div class='chn-banner-left'>Surface plus Design Framework</div>
+                <div class='chn-banner-right'></div>
+            </div>
+        </div>        
+        <div class="chn-row-fluid pad-x-10-fluid">
+            <!--Menu-->
+
+            <!-- Vista XL-->
+            <div class="chn-col-3 bg-red chn-show-extra-large nav-toggle-container fixed-pos menu-position">
+                <div class="close-menu-modal"></div>
+                <!--Menu Container-->
+                <div class="chn-container">
+                    <div class="chn-row-fluid pad-x-10">
+                        <div class="chn-col-12">
+                            <!--START List of items-->
+                            <ul>
+                                <li v-for="topic in listOfItems">
+                                    <a :href="generateIdLink(topic.id)">{{topic.name}}</a>
+                                    <ul v-for="item in topic.submenu">
+                                        <li><a :href="generateIdLink(item.id)">{{item.name}}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!--END List of items-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--Container-->
+            <div class="chn-col-9 chn-show-extra-large margin-auto">
+                
+                <div class="chn-container">
+                    <div class="chn-row-fluid pad-x-10" v-for="topic in listOfItems" :id="topic.id">
+                        <div class="chn-col-12">
+                            <!--START List of items-->
+                            <div class="chn-row-fluid pad-x-10 chn-title-header responsive-title-header-extra-large">- {{topic.name}}</div>
+                            <div class="chn-row-fluid pad-x-10" v-for="item in topic.submenu" :id="item.id">
+                                <div class="chn-container">
+                                    <div class="chn-row-fluid pad-x-10 chn-title-sub-header">• {{item.name}}</div>
+                                    <div class="chn-row-fluid pad-x-10 description-box">
+                                        <div class="description-box-example-box">{{item.container.description}}</div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10">
+                                        <div class="chn-col-12 description-box">                                            
+                                            <div class="description-box-example-box">Class</div>
+                                            <div class="description-box-class-name">{{item.container.class}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10">
+                                        <div class="chn-col-12 description-box">
+                                            <div>
+                                                <div class="description-box-example-box">Example</div>
+                                                <!--Code to show how the class works-->
+                                                <div v-html="item.container.display"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10">
+                                        <div class="chn-col-12 description-box">
+                                            <div>
+                                                <div class="description-box-example-box">Code</div>
+                                                <div class="code-box"> {{item.container.code}} </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </div>
+                            </div>
+                            <!--END List of items-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Vista L-->
+            <div class="chn-col-3-fluid bg-red chn-show-large nav-toggle-container">
+                <span class="close-menu-modal"></span>
+                <!--Menu Container-->
+                <div class="chn-container">
+                    <div class="chn-row-fluid pad-x-10">
+                        <div class="chn-col-9">
+                            <!--START List of items-->
+                            <ul>
+                                <li v-for="topic in listOfItems">
+                                    <a :href="generateIdLink(topic.id)">{{topic.name}}</a>
+                                    <ul v-for="item in topic.submenu">
+                                        <li><a :href="generateIdLink(item.id)">{{item.name}}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!--END List of items-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--Container-->
+            <div class="chn-col-8 chn-show-large margin-auto">
+                
+                <div class="chn-container">
+                    <div class="chn-row-fluid pad-x-10" v-for="topic in listOfItems" :id="topic.id">
+                        <div class="chn-col-9">
+                            <!--START List of items-->
+                            <div class="chn-row-fluid pad-x-10 responsive-title-header-large">- {{topic.name}}</div>
+                            <div class="chn-row-fluid pad-x-10" v-for="item in topic.submenu" :id="item.id"> 
+                                <div class="chn-container">
+                                    <div class="chn-row-fluid pad-x-10 chn-title-sub-header">• {{item.name}}</div>
+                                    <div class="chn-row-fluid pad-x-10">
+                                        <div class="chn-col-9 description-box-class-name">Class {{item.container.class}}</div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10 description-box">
+                                        <div class="chn-col-9 description-box-example-box">Description {{item.container.description}}</div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10">
+                                        <div class="chn-col-9 description-box">
+                                            <div>
+                                                <div class="description-box-example-box">Example</div>
+                                                <!--Code to show how the class works-->
+                                                <div v-html="item.container.display"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10 description-box-example-box">
+                                        <div class="chn-col-9 code-box">Code {{item.container.code}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END List of items-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Vista M-->
+            <div class="chn-col-3-fluid bg-red chn-show-mid nav-toggle-container">
+                <span class="close-menu-modal"></span>
+                <!--Menu Container-->
+                <div class="chn-container">
+                    <div class="chn-row-fluid pad-x-10">
+                        <div class="chn-col-6">
+                            <!--START List of items-->
+                            <ul>
+                                <li v-for="topic in listOfItems">
+                                    <a :href="generateIdLink(topic.id)">{{topic.name}}</a>
+                                    <ul v-for="item in topic.submenu">
+                                        <li><a :href="generateIdLink(item.id)">{{item.name}}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!--END List of items-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--Container-->
+            <div class="chn-col-5 chn-show-mid margin-auto">
+                
+                <div class="chn-container">
+                    <div class="chn-row-fluid pad-x-10" v-for="topic in listOfItems" :id="topic.id">
+                        <div class="chn-col-6">
+                            <!--START List of items-->
+                            <div class="chn-row-fluid pad-x-10 responsive-title-header-mid">- {{topic.name}}</div>
+                            <div class="chn-row-fluid pad-x-10" v-for="item in topic.submenu" :id="item.id"> 
+                                <div class="chn-container">
+                                    <div class="chn-row-fluid pad-x-10 chn-title-sub-header">• {{item.name}}</div>
+                                    <div class="chn-row-fluid pad-x-10">
+                                        <div class="chn-col-6 description-box-class-name">Class {{item.container.class}}</div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10 description-box">
+                                        <div class="chn-col-6 description-box-example-box">Description {{item.container.description}}</div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10">
+                                        <div class="chn-col-6 description-box">
+                                            <div>
+                                                <div class="description-box-example-box">Example</div>
+                                                <!--Code to show how the class works-->
+                                                <div v-html="item.container.display"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10 description-box-example-box">
+                                        <div class="chn-col-6 code-box">Code {{item.container.code}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END List of items-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Vista S-->
+            <div class="chn-col-2-fluid bg-red chn-show-low nav-toggle-container">
+                <span class="close-menu-modal"></span>
+                <!--Menu Container-->
+                <div class="chn-container">
+                    <div class="chn-row-fluid pad-x-10">
+                        <div class="chn-col-4">
+                            <!--START List of items-->
+                            <ul>
+                                <li v-for="topic in listOfItems">
+                                    <a :href="generateIdLink(topic.id)">{{topic.name}}</a>
+                                    <ul v-for="item in topic.submenu">
+                                        <li><a :href="generateIdLink(item.id)">{{item.name}}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!--END List of items-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--Container-->
+            <div class="chn-col-3 chn-show-low margin-auto">
+                
+                <div class="chn-container">
+                    <div class="chn-row-fluid pad-x-10" v-for="topic in listOfItems" :id="topic.id">
+                        <div class="chn-col-4">
+                            <div class="chn-row-fluid pad-x-10 pad-x-10 responsive-title-header-low">- {{topic.name}}</div>
+                            <!--START List of items-->
+                            <div class="chn-row-fluid pad-x-10" v-for="item in topic.submenu" :id="item.id"> 
+                                <div class="chn-container">
+                                    <div class="chn-row-fluid pad-x-10 chn-title-sub-header">• {{item.name}}</div>
+                                    <div class="chn-row-fluid pad-x-10 pad-x-10">
+                                        <div class="chn-col-4 description-box-class-name">Class {{item.container.class}}</div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10 pad-x-10 description-box">
+                                        <div class="chn-col-4 description-box-example-box">Description {{item.container.description}}</div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10">
+                                        <div class="chn-col-4 description-box">
+                                            <div>
+                                                <div class="description-box-example-box">Example</div>
+                                                <!--Code to show how the class works-->
+                                                <div v-html="item.container.display"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chn-row-fluid pad-x-10 pad-x-10 description-box-example-box"> 
+                                        <div class="chn-col-4 code-box">Code {{item.container.code}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END List of items-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+    <!--UTILITIES-->
+    <script src="js/util.js"></script>
+    <!--VUEJS DEV VERSION SCRIPT-->
+    <script src="js/vue.js"></script>
+    <!--MAIN SCRIPT-->
+    <script src="js/main.js"></script>
+
+</html>
